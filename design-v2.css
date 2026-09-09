@@ -327,3 +327,7 @@ main { padding: 43px 44px 32px; max-width: 1440px; }
   .stride-values { margin: 18px 0; }
   .mobile-nav .active i { background: transparent; box-shadow: none; }
 }
+
+/* Original APXe SVG supplied for the app and exported report. */
+.paper-brand { display: flex; align-items: center; gap: 8px; }
+.paper-brand img { width: 94px; height: auto; display: block; }

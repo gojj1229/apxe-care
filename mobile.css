@@ -153,3 +153,8 @@ dialog { overscroll-behavior: contain; }
 }
 
 @media print { .provider-mobile-nav, .mobile-table-hint { display: none !important; } }
+
+@media screen and (max-width: 760px) {
+  .consumer-app .mobile-brand { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; }
+  .mobile-brand img { width: 84px; height: auto; display: block; flex-shrink: 0; }
+}

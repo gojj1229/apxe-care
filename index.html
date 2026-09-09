@@ -6,17 +6,17 @@
   <meta name="theme-color" content="#f5f5f7">
   <meta name="description" content="APXe Care — 나의 보행을 기록하고, 변화를 살펴보고, 리포트로 연결하는 보행 건강 서비스.">
   <title>APXe Care · 나의 보행 건강</title>
-  <link rel="icon" href="assets/apxe.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/apxe.svg?v=6" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="design-v2.css?v=5">
+  <link rel="stylesheet" href="design-v2.css?v=6">
   <script src="data.js" defer></script>
-  <script src="app.js?v=5" defer></script>
-  <link rel="stylesheet" href="mobile.css?v=5">
+  <script src="app.js?v=6" defer></script>
+  <link rel="stylesheet" href="mobile.css?v=6">
 </head>
 <body class="consumer-app">
   <a class="skip-link" href="#main">본문으로 이동</a>
   <aside class="sidebar" aria-label="주 메뉴">
-    <a href="#overview" class="brand" aria-label="APXe Care 홈"><img src="assets/apxe.svg" alt="APXe" width="108" height="26"><span>care<span class="brand-dot"></span></span></a>
+    <a href="#overview" class="brand" aria-label="APXe Care 홈"><img src="assets/apxe.svg?v=6" alt="APXe" width="108" height="25"><span>care<span class="brand-dot"></span></span></a>
     <div class="workspace-label">나의 건강 공간</div>
     <nav class="primary-nav">
       <a href="#overview" data-route="overview" class="nav-link active"><i data-icon="home"></i><span>오늘의 보행</span><span class="nav-dot"></span></a>
@@ -32,7 +32,7 @@
   </aside>
   <div class="app-shell">
     <header class="topbar">
-      <div class="mobile-brand">APXe <span>care.</span></div>
+      <a class="mobile-brand" href="#overview" aria-label="APXe Care 홈"><img src="assets/apxe.svg?v=6" alt="APXe" width="84" height="19"><span>care.</span></a>
       <div class="breadcrumb"><span>나의 건강</span><i data-icon="chevron"></i><strong id="crumb">오늘의 보행</strong></div>
       <div class="account-tools"><button class="demo-badge" data-action="data-info"><span></span>예시 데이터<i data-icon="info"></i></button><span class="topbar-divider"></span><button class="account-button" data-action="settings" aria-label="체험 계정 설정"><span class="avatar"><i data-icon="user"></i></span><span class="account-name">체험 계정</span><i data-icon="chevron-down"></i></button></div>
     </header>
