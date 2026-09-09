@@ -1,0 +1,155 @@
+/* Shared mobile refinement for the customer and provider experiences. */
+html { -webkit-text-size-adjust: 100%; }
+button, a, select, input { touch-action: manipulation; }
+.provider-mobile-nav, .mobile-table-hint { display: none; }
+body:has(dialog[open]) { overflow: hidden; }
+dialog { overscroll-behavior: contain; }
+
+@media screen and (max-width: 760px) {
+  body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  .sidebar { display: none; }
+  .app-shell, .shell { margin-left: 0; min-width: 0; }
+  main { min-width: 0; }
+  main:focus { outline: none; }
+  .topbar { padding-top: env(safe-area-inset-top); height: calc(60px + env(safe-area-inset-top)); }
+  .consumer-app .mobile-brand { white-space: nowrap; }
+  .demo-badge, .sample { font-size: 12px; min-height: 44px; padding: 0; }
+  .account-button { min-height: 44px; min-width: 44px; justify-content: center; }
+  .consumer-app .account-tools { gap: 8px; }
+  button.icon-button, .analysis-panel .icon-button, .date-switch .icon-button {
+    width: 44px; height: 44px; flex: 0 0 44px;
+  }
+  .consumer-app .heading-actions:has(.date-switch) { top: -8px; }
+  .consumer-app .page-heading h1 { padding-right: 90px; font-size: 30px; }
+  .consumer-app .page-heading p { font-size: 14px; }
+  .segmented button, .filter-strip .segmented button { min-height: 40px; font-size: 13px; }
+  .text-button, .hero-bottom button { min-height: 44px; font-size: 13px; }
+  select, .select-wrap select, input:not([type=checkbox]):not([type=radio]) { font-size: 16px; min-height: 48px; }
+  .condition-filter, .condition { min-height: 44px; font-size: 13px; }
+  .hero-content { gap: 10px; }
+  .hero-caption, .hero-bottom, .hero-bottom button { font-size: 12px; }
+  .hero-bottom { padding-top: 6px; margin-top: 15px; }
+  .hero-bottom button { flex-shrink: 0; }
+  .hero-tag { font-size: 12px; }
+  .metric-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .metric-card { min-width: 0; padding-inline: 9px; }
+  .metric-top { font-size: 13px; }
+  .metric-value { flex-wrap: wrap; row-gap: 3px; }
+  .metric-value span { font-size: 12px; }
+  .metric-tail, .metric-tail span { font-size: 12px; line-height: 1.5; }
+  .metric-tail { min-height: 36px; }
+  .metric-context, .chart-summary span, .chart-footer, .session-meta, .session-stat small { font-size: 12px; }
+  .session-name { font-size: 14px; }
+  .chart svg { min-height: 0; }
+  .chart text { font-size: 12px; fill: #6e6e73; }
+  .chart .chart-value { fill: #1d1d1f; font-size: 12px; }
+  .chart-summary { flex-wrap: wrap; }
+  .analysis-panel .inline-note, .delta, .measure-label { font-size: 13px; }
+  .stride-value span small, .stride-value .unit { font-size: 12px; }
+  .conditions { gap: 20px 14px; }
+  .conditions dd { overflow-wrap: anywhere; }
+  .form-label, .date-range-label, .check-card small, .report-controls .share-hint { font-size: 13px; }
+  .check-card { padding-block: 16px; }
+  .check-card strong { font-size: 16px; }
+  .check-card input { margin-top: 3px; }
+  .report-paper { padding: 22px 18px; }
+  .paper-top { flex-wrap: wrap; gap: 10px; }
+  .paper-stats { gap: 8px; padding: 14px 10px; }
+  .paper-stat strong { font-size: 23px; }
+  .paper-row { flex-wrap: wrap; gap: 6px 16px; }
+  .paper-row strong { margin-left: auto; }
+  .paper-subject { flex-wrap: wrap; gap: 8px 20px; }
+  .mobile-nav, .provider-mobile-nav {
+    display: grid; grid-template-columns: repeat(4,minmax(0,1fr));
+    position: fixed; inset: auto 0 0; z-index: 30;
+    height: auto; min-height: calc(72px + env(safe-area-inset-bottom));
+    padding: 8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));
+    background: #fffffff2; border-top: 1px solid #e3e3e6; backdrop-filter: blur(20px);
+  }
+  .mobile-nav a, .mobile-nav button, .provider-mobile-nav a, .provider-mobile-nav button {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 5px; min-height: 52px; padding: 4px; font-size: 12px; color: #6e6e73;
+  }
+  .provider-mobile-nav svg { width: 21px; height: 21px; }
+  .provider-mobile-nav .active { color: #0066cc; font-weight: 600; }
+  .page-footer, .provider-app footer { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+  #toast { bottom: calc(88px + env(safe-area-inset-bottom)); }
+  dialog, .app-dialog, .report-dialog {
+    width: calc(100% - 24px); max-width: 630px;
+    max-height: calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    padding: 0; overflow: auto; border-radius: 20px;
+  }
+  .dialog-head, .dialog-header { position: sticky; top: 0; z-index: 2; background: white; padding: 14px 20px; }
+  .dialog-head h2, .dialog-header h2 { font-size: 20px; }
+  .dialog-head button { min-width: 44px; min-height: 44px; }
+  .dialog-body { padding: 20px; font-size: 15px; }
+  .dialog-actions { position: sticky; bottom: 0; background: white; padding: 14px 20px; flex-wrap: wrap; }
+  .dialog-actions .button { flex: 1; min-height: 46px; font-size: 14px; }
+  .report-dialog .dialog-body { padding: 16px; }
+  .provider-app main { padding: 24px 18px; }
+  .provider-app .crumb { font-size: 12px; gap: 8px; }
+  .provider-app .topbar { padding-inline: 18px; }
+  .provider-app .subject { min-width: 0; align-items: flex-start; }
+  .provider-app .subject p { flex-wrap: wrap; font-size: 12px; gap: 5px; line-height: 1.5; }
+  .provider-app .subject-id { display: none; }
+  .provider-app .subject-actions { justify-content: space-between; gap: 10px; }
+  .provider-app .subject-actions select { flex: 1; min-width: 0; }
+  .provider-app .button { font-size: 14px; min-height: 48px; padding-inline: 16px; }
+  .provider-app .view-tabs { gap: 22px; flex-wrap: wrap; }
+  .provider-app .view-tabs > button { font-size: 14px; min-height: 44px; padding-bottom: 8px; }
+  .provider-app .condition { padding-bottom: 0; margin-bottom: 4px; }
+  .provider-app .metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .provider-app .metric { padding: 18px 16px; }
+  .provider-app .metric-label { font-size: 14px; line-height: 1.45; }
+  .provider-app .metric-reading small { font-size: 12px; }
+  .provider-app .metric-caption { font-size: 12px; line-height: 1.55; }
+  .provider-app .metric-caption strong { display: block; margin: 3px 0 0; }
+  .provider-app .panel { padding: 20px; }
+  .provider-app .panel-head { flex-wrap: wrap; gap: 8px; }
+  .provider-app .panel-head h2 { font-size: 18px; }
+  .provider-app .panel-head > span { font-size: 12px; }
+  .provider-app .chart-summary { font-size: 12px; line-height: 1.6; }
+  .provider-app .trend-chart { height: auto; margin-block: 18px; }
+  .provider-app .trend-chart text { font-size: 12px; fill: #6e6e73; }
+  .provider-app .chart-foot { flex-wrap: wrap; gap: 8px; font-size: 13px; }
+  .provider-app .conditions > div { font-size: 13px; align-items: flex-start; }
+  .provider-app .conditions dd { max-width: 62%; }
+  .provider-app .review-note strong { font-size: 13px; }
+  .provider-app .review-note p, .record-note { font-size: 13px; }
+  .mobile-table-hint { display: block; font-size: 12px; color: #6e6e73; margin: 0 0 12px; }
+  .table-wrap { max-width: 100%; max-height: 60dvh; overscroll-behavior-x: contain; }
+  .table-wrap table { font-size: 14px; }
+  .provider-app .report-row { flex-wrap: wrap; gap: 5px 14px; }
+  .provider-app .report-row strong { margin-left: auto; text-align: right; }
+}
+
+@media screen and (max-width: 359px) {
+  .consumer-app .topbar { padding-inline: 16px; }
+  .consumer-app .mobile-brand { font-size: 20px; }
+  .demo-badge { font-size: 11px; }
+  .consumer-app main { padding-inline: 16px; }
+  .consumer-app .page-heading h1 { font-size: 27px; }
+  .activity-hero { padding-inline: 18px; }
+  .metric-hero strong { font-size: 46px; }
+  .metric-hero span { font-size: 12px; }
+  .goal-ring { width: 84px; height: 84px; flex-basis: 84px; }
+  .hero-content { gap: 6px; }
+  .hero-bottom { flex-wrap: wrap; gap: 0; }
+  .hero-bottom button { margin-left: auto; }
+  .metric-card { padding-inline: 6px; }
+  .metric-value strong { font-size: 24px; }
+  .metric-value { flex-direction: column; align-items: center; }
+  .metric-tail span { font-size: 11px; }
+  .stride-value { gap: 5px; }
+  .stride-value + .stride-value { padding-left: 8px; }
+  .stride-value strong { font-size: 28px; }
+  .stride-values { gap: 8px; }
+  .provider-app .subject-actions { flex-wrap: wrap; }
+  .provider-app .subject-actions .button { width: 100%; }
+  .provider-app .view-tabs { gap: 16px; }
+  .provider-app .condition { margin-left: 0; width: 100%; }
+  .provider-app .metric { padding-inline: 12px; }
+  .provider-app .metric-label { font-size: 13px; }
+}
+
+@media print { .provider-mobile-nav, .mobile-table-hint { display: none !important; } }

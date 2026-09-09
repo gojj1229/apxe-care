@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="APXe Care — 나의 보행을 기록하고, 변화를 살펴보고, 리포트로 연결하는 보행 건강 서비스.">
+  <title>APXe Care · 나의 보행 건강</title>
+  <link rel="icon" href="assets/apxe.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="design-v2.css?v=5">
+  <script src="data.js" defer></script>
+  <script src="app.js?v=5" defer></script>
+  <link rel="stylesheet" href="mobile.css?v=5">
+</head>
+<body class="consumer-app">
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <aside class="sidebar" aria-label="주 메뉴">
+    <a href="#overview" class="brand" aria-label="APXe Care 홈"><img src="assets/apxe.svg" alt="APXe" width="108" height="26"><span>care<span class="brand-dot"></span></span></a>
+    <div class="workspace-label">나의 건강 공간</div>
+    <nav class="primary-nav">
+      <a href="#overview" data-route="overview" class="nav-link active"><i data-icon="home"></i><span>오늘의 보행</span><span class="nav-dot"></span></a>
+      <a href="#analysis" data-route="analysis" class="nav-link"><i data-icon="activity"></i><span>보행 분석</span></a>
+      <a href="#report" data-route="report" class="nav-link"><i data-icon="file"></i><span>리포트</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="device-mini"><span class="device-symbol"><i data-icon="device"></i></span><div><strong>Haier W1</strong><span>샘플 기록 살펴보는 중</span></div><button class="icon-button" data-action="device" aria-label="기기와 데이터 정보"><i data-icon="chevron"></i></button></div>
+      <button class="nav-link" data-action="settings"><i data-icon="settings"></i><span>내 정보·설정</span></button>
+      <button class="nav-link help-link" data-action="help"><i data-icon="help"></i><span>서비스 안내</span></button>
+      <div class="sidebar-foot">APXe Care <span>v1.0</span></div>
+    </div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="mobile-brand">APXe <span>care.</span></div>
+      <div class="breadcrumb"><span>나의 건강</span><i data-icon="chevron"></i><strong id="crumb">오늘의 보행</strong></div>
+      <div class="account-tools"><button class="demo-badge" data-action="data-info"><span></span>예시 데이터<i data-icon="info"></i></button><span class="topbar-divider"></span><button class="account-button" data-action="settings" aria-label="체험 계정 설정"><span class="avatar"><i data-icon="user"></i></span><span class="account-name">체험 계정</span><i data-icon="chevron-down"></i></button></div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="page-footer"><span>내가 선택한 기록으로 연결하는 건강</span><span>© APXe Care</span></footer>
+  </div>
+  <nav class="mobile-nav" aria-label="하단 메뉴"><a href="#overview" data-route="overview"><i data-icon="home"></i>홈</a><a href="#analysis" data-route="analysis"><i data-icon="activity"></i>보행 분석</a><a href="#report" data-route="report"><i data-icon="file"></i>리포트</a><button data-action="settings"><i data-icon="user"></i>내 정보</button></nav>
+  <dialog id="detail-dialog" class="app-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <div id="print-root"></div>
+  <noscript><p class="no-script">보행 기록과 리포트를 확인하려면 브라우저에서 JavaScript를 활성화해 주세요.</p></noscript>
+</body>
+</html>
